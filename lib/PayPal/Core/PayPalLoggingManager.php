@@ -110,10 +110,6 @@ class PayPalLoggingManager
      */
     public function debug($message)
     {
-        $config = PayPalConfigManager::getInstance()->getConfigHashmap();
-        // Disable debug in live mode.
-        if (array_key_exists('mode', $config) && $config['mode'] != 'live') {
-            $this->logger->debug($message);
-        }
+        $this->logger->debug($message);
     }
 }
